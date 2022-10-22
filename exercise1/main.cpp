@@ -83,7 +83,7 @@ int main(){
 	int ParticleSpecies;
 	cin >> ParticleSpecies;
 	//choose energy
-	double KineticEnergy=66;
+	double KineticEnergy=0;
 	//cout << "What Kinetic energy do you want the particle to have?: ";
 	//cin >> KineticEnergy;
 	cout << "\nCalculating...\n";	
@@ -97,8 +97,8 @@ int main(){
 	double DifferenceDeltaEOut,DifferenceEOut;
 	double DeltaDetectorThickness = 0.0533; //
 	int step;
-	for (step;step<10;step++) {
-		KineticEnergy += 0.1;
+	for (step;step<330;step++) {
+		KineticEnergy += 0.2;
 		Euler(KineticEnergy,ParticleSpecies,DeltaDetectorThickness,&DifferenceDeltaEOut,&DifferenceEOut);	
 		cout << "Deposit of energy in the Delta E Detector:\n";
 		cout << DifferenceDeltaEOut;

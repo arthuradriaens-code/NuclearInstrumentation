@@ -1,5 +1,6 @@
 .TL
-Nuclear instrumentation
+Nuclear instrumentation:
+Exercise 1
 .AU 
 Arthur Adriaens
 .AI
@@ -129,4 +130,15 @@ will be stopped by the complete $Delta$E-E system
 What energy do such protons deposit in the $Delta$E detector and are they still detected in the $Delta$E-E system? (i)
 .LT
 .PP
-buh
+In a plot, everything together over the range where the protons get completely blocked looks like this:
+.PDFPIC -C i_1.pdf 4i
+The $Delta$E detected deposit will look like this:
+.PDFPIC -C i_2.pdf 4i
+Everything that is cut away from the previous plot wasn't
+detected by the system.
+.NH
+What step size did you use for your calculations? (j)
+.LT
+.PP
+A step size of 0.0000001 centimeter (0.1 micrometer) was used, as one of the first tasks asked to micrometer precision I decided to take at least a tenth of that to get an accurate prediction. I later on checked if this was a good step size by redoing some calculations with a smaller step size but I didn't notice any significant differences.
+
