@@ -83,9 +83,9 @@ int main(){
 	int ParticleSpecies;
 	cin >> ParticleSpecies;
 	//choose energy
-	double KineticEnergy;
-	cout << "What Kinetic energy do you want the particle to have?: ";
-	cin >> KineticEnergy;
+	double KineticEnergy=66;
+	//cout << "What Kinetic energy do you want the particle to have?: ";
+	//cin >> KineticEnergy;
 	cout << "\nCalculating...\n";	
 	cout << "------------------------------------------\n";
 
@@ -93,25 +93,33 @@ int main(){
 	if (ParticleSpecies==1) {output.open("proton_loss.csv");}
 	if (ParticleSpecies==2) {output.open("Deuteron_loss.csv");}
 	if (ParticleSpecies==3) {output.open("Tritium_loss.csv");}
-	output << "Delta Detector Width, Delta E Detector deposit,E Detector deposit\n";
+	output << "Delta Detector Width, Delta E Detector deposit,E Detector deposit,Outgoing Kinetic Energy\n";
 	double DifferenceDeltaEOut,DifferenceEOut;
 	double DeltaDetectorThickness = 0.0533; //
-	Euler(KineticEnergy,ParticleSpecies,DeltaDetectorThickness,&DifferenceDeltaEOut,&DifferenceEOut);	
-	cout << "Deposit of energy in the Delta E Detector:\n";
-	cout << DifferenceDeltaEOut;
-	cout << "\n";
-	cout << "Deposit of energy in the E Detector:\n";
-	cout << DifferenceEOut;
-	cout << "\n";
-	cout << "------------------------------------------\n";
-	output << KineticEnergy;
-	output << ",";
-	output << DifferenceDeltaEOut;
-	output << ",";
-	output << DifferenceEOut;
-	output << "\n";
-	KineticEnergy += 0.1;
-	output.close();
+	int step;
+	for (step;step<10;step++) {
+		KineticEnergy += 0.1;
+		Euler(KineticEnergy,ParticleSpecies,DeltaDetectorThickness,&DifferenceDeltaEOut,&DifferenceEOut);	
+		cout << "Deposit of energy in the Delta E Detector:\n";
+		cout << DifferenceDeltaEOut;
+		cout << "\n";
+		cout << "Deposit of energy in the E Detector:\n";
+		cout << DifferenceEOut;
+		cout << "\n";
+		cout << "outgoing kinetic energy:";
+		cout << "\n";
+		cout << KineticEnergy - DifferenceDeltaEOut - DifferenceEOut;
+		cout << "\n";
+		cout << "------------------------------------------\n";
+		output << KineticEnergy;
+		output << ",";
+		output << DifferenceDeltaEOut;
+		output << ",";
+		output << DifferenceEOut;
+		output << ",";
+		output << KineticEnergy - DifferenceDeltaEOut - DifferenceEOut;
+		output << "\n";
 
-	
+	}
+	output.close();
 }
