@@ -13,10 +13,13 @@ Determine the thickness of the $Delta$E detector (a)
 .LT
 .PP
 To determine the thickness of the $Delta$E detector, we'll take
-a look at the requirements: "Deuterons need to have an
+a look at the requirement "Deuterons need to have an
 energy of at least 13.3 MeV to be detected by the system",
-This means that either of the tresholds isn't reached. I.e either the deposited energy in the silicium detector isn't above the threshold or the one in the Germanium detector isn't above 5.2 MeV.
-we'll vary the width of the $Delta$E detector and see when the
+This means that either of the thresholds isn't reached. I.e either the
+deposited energy in the silicon detector isn't above the threshold or the one
+in the Germanium detector isn't above 5.2 MeV. As Silicon generally has a lower
+threshold it's safe to only look at germanium.
+We'll vary the width of the $Delta$E detector and see when the
 threshold energy of the Ge E detector is no longer reached:
 .SH
 13.3 MeV Deuteron
@@ -51,7 +54,7 @@ produce a signal of 5.63 MeV in the Si detector. We could also
 identify this with a 17.1MeV Deuteron or a 24.3 MeV Triton, if
 we then really wanted to make sure, in effect we need the two
 plots, also the energy loss in the Germanium detector:
-.PDFPIC -C EPlot.pdf 3i
+.PDFPIC -C EPlot.pdf 2.8i
 .PP
 We would receive a signal of 4.2 MeV in the Germanium detector as this corresponds to the proton of 10 MeV, however this doesn't correspond at all with a 17.1 MeV Deuteron or a 24.3 MeV Triton. 
 .NH
